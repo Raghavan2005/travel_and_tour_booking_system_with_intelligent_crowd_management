@@ -18,7 +18,7 @@ interface Message {
 // --- Gemini Service ---
 const GeminiService = {
   // NOTE: Use environment variables (e.g., process.env.GEMINI_API_KEY) in a real app
-  API_KEY: "",
+  API_KEY: "AIzaSyBI-FfwQzFdicIK_upeQHnEDu9XKNsczn8",
 
   async generateTravelResponse(
     message: string,
@@ -189,19 +189,19 @@ const markdownToHtml = (markdown: string) => {
     let html = markdown;
 
     // 1. Convert lists (Handle both * and - followed by a space, and numbered lists)
-    html = html.replace(/\* (.*?)\n/g, '<li>$1</li>\n');
-    html = html.replace(/- (.*?)\n/g, '<li>$1</li>\n');
+    html = html.replace(/\* (.*?)\n/g, '<li>₹1</li>\n');
+    html = html.replace(/- (.*?)\n/g, '<li>₹1</li>\n');
     
     // Numbered lists (simple placeholder conversion for demonstration)
-    html = html.replace(/(\d+)\. (.*?)\n/g, '<ol-item>$2</ol-item>\n');
+    html = html.replace(/(\d+)\. (.*?)\n/g, '<ol-item>₹2</ol-item>\n');
 
 
     // 2. Bold/Italics/Headers
     html = html
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-        .replace(/\*(.*?)\*/g, '<em>$1</em>') // Italics
-        .replace(/## (.*?)\n/g, '<h2>$1</h2>\n') // H2
-        .replace(/### (.*?)\n/g, '<h3>$1</h3>\n'); // H3
+        .replace(/\*\*(.*?)\*\*/g, '<strong>₹1</strong>') // Bold
+        .replace(/\*(.*?)\*/g, '<em>₹1</em>') // Italics
+        .replace(/## (.*?)\n/g, '<h2>₹1</h2>\n') // H2
+        .replace(/### (.*?)\n/g, '<h3>₹1</h3>\n'); // H3
 
     // 3. Paragraphs and Line Breaks
     html = html.replace(/\n\n/g, '</p><p>');
@@ -209,13 +209,13 @@ const markdownToHtml = (markdown: string) => {
 
     // 4. Wrap list items (more robust block wrapping)
     const wrapListItems = (listType: 'ul' | 'ol', listTag: string, itemTag: string) => {
-        const itemRegex = new RegExp(`(<br>)*<${itemTag}>(.*?)<\/${itemTag}>(<br>)*`, 'g');
+        const itemRegex = new RegExp(`(<br>)*<₹{itemTag}>(.*?)<\/₹{itemTag}>(<br>)*`, 'g');
         
         // Find blocks of list items and wrap them
-        html = html.replace(new RegExp(`(<p>)?(${itemRegex.source})+(<\/p>)?`, 'gs'), (match) => {
+        html = html.replace(new RegExp(`(<p>)?(₹{itemRegex.source})+(<\/p>)?`, 'gs'), (match) => {
             // Clean up unnecessary <p> and <br> within the block
             const cleanMatch = match.replace(/<\/?p>/g, '').replace(/<br>/g, '');
-            return `<${listTag}>${cleanMatch}</${listTag}>`;
+            return `<₹{listTag}>${cleanMatch}</${listTag}>`;
         });
         
         // Final cleanup of list contents
@@ -263,16 +263,24 @@ const ChatbotPage = () => {
   const [toPlace, setToPlace] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const popularDestinations = [
-    "Paris, France",
-    "Tokyo, Japan",
-    "New York, USA",
-    "Rome, Italy",
-    "London, UK",
-    "Dubai, UAE",
-    "Barcelona, Spain",
-    "Sydney, Australia",
-  ];
+const popularDestinations = [
+  "Chennai",
+  "Coimbatore",
+  "Madurai",
+  "Tiruchirappalli",
+  "Ooty",
+  "Kodaikanal",
+  "Rameswaram",
+  "Thanjavur",
+  "Kanyakumari",
+  "Mahabalipuram",
+  "Yelagiri",
+  "Hogenakkal Falls",
+  "Pondicherry",
+  "Velankanni",
+  "Courtallam"
+];
+
 
   const quickActions = [
     { icon: MapPin, text: "Low crowd destinations", action: "crowd" },
