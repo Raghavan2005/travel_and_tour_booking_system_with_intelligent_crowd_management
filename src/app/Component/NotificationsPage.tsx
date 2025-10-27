@@ -1,10 +1,34 @@
 import { Users, CheckCircle, AlertTriangle, Zap, Bell } from "lucide-react";
 import { useState } from "react";
 const mockNotifications = [
-  { id: 1, type: "crowd", message: "Low crowd detected at Eiffel Tower - Perfect time to visit!", time: "5 min ago", read: false },
-  { id: 2, type: "booking", message: "Your Santorini booking is confirmed!", time: "2 hours ago", read: false },
-  { id: 3, type: "alert", message: "Weather alert for Swiss Alps tour on Jan 10", time: "1 day ago", read: true },
-  { id: 4, type: "suggestion", message: "She suggests visiting Louvre Museum - 30% less crowd than usual", time: "2 days ago", read: true }
+    {
+        id: 1,
+        type: "crowd",
+        message: "Low crowd detected at Shore Temple, Mahabalipuram - Perfect time for your visit!",
+        time: "15 min ago", // Adjusted time
+        read: false
+    },
+    {
+        id: 2,
+        type: "booking",
+        message: "Your Kodaikanal Lake Boating booking is confirmed!",
+        time: "3 hours ago", // Adjusted time
+        read: false
+    },
+    {
+        id: 3,
+        type: "alert",
+        message: "Rainfall alert for Madurai Meenakshi Temple on Jan 5",
+        time: "1 day ago",
+        read: true
+    },
+    {
+        id: 4,
+        type: "suggestion",
+        message: "Try a Chola heritage walk in Thanjavur - great new tour available!",
+        time: "3 days ago", // Adjusted time
+        read: true
+    }
 ];
 // Notifications Page
 const NotificationsPage = () => {

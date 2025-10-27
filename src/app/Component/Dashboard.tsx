@@ -2,70 +2,75 @@
 import React, { useState, useEffect } from 'react';
 
 import { Zap, Users, MapPin, Star, Calendar, DollarSign, TrendingUp, AlertTriangle } from "lucide-react";
-// Mock Data
+// Mock Data for Tamil Nadu Tours
 const mockTours = [
   {
     id: 1,
-    name: "Eiffel Tower Experience",
-    location: "Paris, France",
-    price: 89,
-    originalPrice: 120,
-    rating: 4.8,
-    reviews: 2456,
-    image: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=400",
-    crowdLevel: "low",
-    crowdPercentage: 35,
+    name: "Madurai Meenakshi Temple Visit",
+    location: "Madurai, Tamil Nadu, India",
+    price: 99,
+    originalPrice: 150, // Discounted temple darshan/guide
+    rating: 4.9,
+    reviews: 5120,
+    // Image of Meenakshi Amman Temple Gopuram
+    image: "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/07/Meenakshi-Temple-in-Madurai.jpg?w=1200&ssl=1", 
+    crowdLevel: "high",
+    crowdPercentage: 90,
     aiRecommended: true,
-    tags: ["Cultural", "Romantic"]
+    tags: ["Pilgrimage", "Cultural", "Historical"]
   },
   {
     id: 2,
-    name: "Colosseum Ancient Tour",
-    location: "Rome, Italy",
-    price: 75,
-    originalPrice: 75,
-    rating: 4.9,
-    reviews: 3421,
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400",
-    crowdLevel: "high",
-    crowdPercentage: 85,
+    name: "Ooty Nilgiri Mountain Railway",
+    location: "Ooty, Tamil Nadu, India",
+    price: 180,
+    originalPrice: 180,
+    rating: 4.8,
+    reviews: 2890,
+    // Image of Nilgiri Mountain Railway (Toy Train)
+    image: "https://media1.thrillophilia.com/filestore/smxkrbqzj5j6xv5pvllqwurrl1e9_1584369298_Shore_Temple.jpg?w=1440&dpr=2",
+    crowdLevel: "medium",
+    crowdPercentage: 65,
     aiRecommended: false,
-    tags: ["Cultural", "Historical"]
+    tags: ["Nature", "Scenic", "Adventure"]
   },
   {
     id: 3,
-    name: "Santorini Sunset Cruise",
-    location: "Santorini, Greece",
-    price: 120,
-    originalPrice: 150,
+    name: "Mahabalipuram Shore Temple Tour",
+    location: "Mahabalipuram, Tamil Nadu, India",
+    price: 70,
+    originalPrice: 90,
     rating: 4.7,
-    reviews: 1823,
-    image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=400",
-    crowdLevel: "medium",
-    crowdPercentage: 55,
+    reviews: 1540,
+    // Image of Shore Temple Mahabalipuram
+    image: "https://media1.thrillophilia.com/filestore/smxkrbqzj5j6xv5pvllqwurrl1e9_1584369298_Shore_Temple.jpg?w=1440&dpr=2",
+    crowdLevel: "low",
+    crowdPercentage: 40,
     aiRecommended: true,
-    tags: ["Relaxation", "Romantic"]
+    tags: ["Historical", "Beach", "Architecture"]
   },
   {
     id: 4,
-    name: "Swiss Alps Adventure",
-    location: "Interlaken, Switzerland",
-    price: 199,
-    originalPrice: 199,
+    name: "Kanyakumari Sunset & Vivekananda Rock",
+    location: "Kanyakumari, Tamil Nadu, India",
+    price: 110,
+    originalPrice: 110,
     rating: 5.0,
-    reviews: 987,
-    image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400",
-    crowdLevel: "low",
-    crowdPercentage: 25,
+    reviews: 980,
+    // Image of Vivekananda Rock Memorial and Thiruvalluvar Statue
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/3e/ba/dc/vivekananda-rock.jpg?w=800&h=500&s=1",
+    crowdLevel: "high",
+    crowdPercentage: 80,
     aiRecommended: true,
-    tags: ["Adventure", "Nature"]
+    tags: ["Spiritual", "Scenic", "Photography"]
   }
 ];
 
+// Updated Mock Bookings
 const mockBookings = [
-  { id: 1, tour: "Eiffel Tower Experience", date: "Nov 15, 2025", status: "Confirmed", price: 89 },
-  { id: 2, tour: "Santorini Sunset Cruise", date: "Dec 2, 2025", status: "Pending", price: 120 },
-  { id: 3, tour: "Swiss Alps Adventure", date: "Jan 10, 2026", status: "Confirmed", price: 199 }
+  { id: 1, tour: "Madurai Meenakshi Temple Visit", date: "Nov 25, 2025", status: "Confirmed", price: 99 },
+  { id: 2, tour: "Mahabalipuram Shore Temple Tour", date: "Dec 10, 2025", status: "Pending", price: 70 },
+  { id: 3, tour: "Kanyakumari Sunset & Vivekananda Rock", date: "Jan 5, 2026", status: "Confirmed", price: 110 }
 ];
 
 
@@ -124,7 +129,7 @@ const TourCard = ({ tour }) => {
         </div>
         <div className="flex items-center justify-between pt-3 border-t border-gray-700">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-teal-400">${tour.price}</span>
+            <span className="text-2xl font-bold text-teal-400">₹{tour.price}</span>
             {tour.originalPrice > tour.price && (
               <span className="text-sm text-gray-500 line-through">${tour.originalPrice}</span>
             )}
@@ -178,7 +183,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard icon={Calendar} label="Upcoming Bookings" value="3" change={12} color="bg-teal-500/10 text-teal-400" />
         <StatCard icon={MapPin} label="Destinations Visited" value="12" change={8} color="bg-blue-500/10 text-blue-400" />
-        <StatCard icon={DollarSign} label="Total Spent" value="$1,234" change={-5} color="bg-emerald-500/10 text-emerald-400" />
+        <StatCard icon={DollarSign} label="Total Spent" value="₹1,234" change={-5} color="bg-emerald-500/10 text-emerald-400" />
         <StatCard icon={TrendingUp} label="She Recommendations" value="8" change={15} color="bg-purple-500/10 text-purple-400" />
       </div>
 
@@ -220,14 +225,14 @@ const Dashboard = () => {
           <div className="flex items-center justify-between p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="text-gray-100">Eiffel Tower - Low crowd detected (35% capacity)</span>
+              <span className="text-gray-100"> Low crowd detected (35% capacity)</span>
             </div>
             <span className="text-xs text-emerald-400">Perfect time!</span>
           </div>
           <div className="flex items-center justify-between p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-              <span className="text-gray-100">Colosseum - High crowd alert (85% capacity)</span>
+              <span className="text-gray-100">High crowd alert (85% capacity)</span>
             </div>
             <span className="text-xs text-red-400">Consider later</span>
           </div>
@@ -256,7 +261,7 @@ const Dashboard = () => {
                       {booking.status}
                     </span>
                   </td>
-                  <td className="py-3 px-4 text-right text-gray-100 font-medium">${booking.price}</td>
+                  <td className="py-3 px-4 text-right text-gray-100 font-medium">₹{booking.price}</td>
                 </tr>
               ))}
             </tbody>

@@ -215,7 +215,7 @@ const markdownToHtml = (markdown: string) => {
         html = html.replace(new RegExp(`(<p>)?(₹{itemRegex.source})+(<\/p>)?`, 'gs'), (match) => {
             // Clean up unnecessary <p> and <br> within the block
             const cleanMatch = match.replace(/<\/?p>/g, '').replace(/<br>/g, '');
-            return `<₹{listTag}>${cleanMatch}</${listTag}>`;
+            return `<${listTag}>${cleanMatch}</${listTag}>`;
         });
         
         // Final cleanup of list contents

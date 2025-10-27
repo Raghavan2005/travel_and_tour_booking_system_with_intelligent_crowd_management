@@ -6,16 +6,61 @@ const MyBookings = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
   
   const upcomingBookings = [
-    { id: 1, tour: 'Eiffel Tower Experience', location: 'Paris, France', date: 'Nov 15, 2025', time: '10:00 AM', status: 'Confirmed', price: 89, crowdForecast: 'low', image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=400' },
-    { id: 2, tour: 'Santorini Sunset Cruise', location: 'Santorini, Greece', date: 'Dec 2, 2025', time: '6:00 PM', status: 'Confirmed', price: 120, crowdForecast: 'medium', image: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=400' },
-    { id: 3, tour: 'Swiss Alps Adventure', location: 'Interlaken, Switzerland', date: 'Jan 10, 2026', time: '8:00 AM', status: 'Pending', price: 199, crowdForecast: 'low', image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400' }
-  ];
+    {
+        id: 1,
+        tour: 'Shore Temple Visit & Beach Walk',
+        location: 'Mahabalipuram, Tamil Nadu',
+        date: 'Nov 22, 2025', // Updated date
+        time: '9:30 AM',
+        status: 'Confirmed',
+        price: 99, // Adjusted price
+        crowdForecast: 'medium', // Adjusted forecast
+        image: 'https://traveltam.com/assets/mahabalipuram/shore-temple/shore-temple.webp' // Image of Shore Temple/Mahabalipuram
+    },
+    {
+        id: 2,
+        tour: 'Misty Kodaikanal Lake Boating',
+        location: 'Kodaikanal, Tamil Nadu',
+        date: 'Dec 15, 2025', // Updated date
+        time: '11:00 AM',
+        status: 'Confirmed',
+        price: 150, // Adjusted price
+        crowdForecast: 'high', // Adjusted forecast
+        image: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Boating_in_Kodaikanal_with_Mist_falling_in_lake.jpg' // Image of Kodaikanal
+    },
+    {
+        id: 3,
+        tour: 'Meenakshi Amman Temple Tour',
+        location: 'Madurai, Tamil Nadu',
+        date: 'Jan 5, 2026', // Updated date
+        time: '7:00 AM',
+        status: 'Pending',
+        price: 125, // Adjusted price
+        crowdForecast: 'medium', // Adjusted forecast
+        image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/22/62/8b/taken-on-the-float-festival.jpg?w=2000&h=800&s=1' // Image of Meenakshi Temple
+    }
+];
 
-  const pastBookings = [
-    { id: 4, tour: 'Grand Canyon Tour', location: 'Arizona, USA', date: 'Oct 1, 2025', status: 'Completed', price: 150, rating: 5 },
-    { id: 5, tour: 'Tokyo City Explorer', location: 'Tokyo, Japan', date: 'Sep 15, 2025', status: 'Completed', price: 95, rating: 4 }
-  ];
-
+const pastBookings = [
+    {
+        id: 4,
+        tour: 'Ooty Toy Train & Botanical Garden',
+        location: 'Ooty, Tamil Nadu',
+        date: 'Oct 8, 2025', // Updated date
+        status: 'Completed',
+        price: 180, // Adjusted price
+        rating: 5
+    },
+    {
+        id: 5,
+        tour: 'Kanyakumari Sunrise & Vivekananda Rock',
+        location: 'Kanyakumari, Tamil Nadu',
+        date: 'Sep 1, 2025', // Updated date
+        status: 'Completed',
+        price: 110, // Adjusted price
+        rating: 4
+    }
+];
   return (
     <div className="space-y-6">
       <div>
@@ -72,7 +117,7 @@ const MyBookings = () => {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 mb-1">Price</p>
-                      <p className="text-sm font-medium text-teal-400">${booking.price}</p>
+                      <p className="text-sm font-medium text-teal-400">₹{booking.price}</p>
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 mb-1">Crowd Forecast</p>
@@ -113,7 +158,7 @@ const MyBookings = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                <span className="text-lg font-semibold text-gray-100">${booking.price}</span>
+                <span className="text-lg font-semibold text-gray-100">₹{booking.price}</span>
                 <div className="flex gap-3">
                   <button className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-lg text-sm font-medium transition-colors">Book Again</button>
                   <button className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg text-sm font-medium transition-colors">View Receipt</button>
