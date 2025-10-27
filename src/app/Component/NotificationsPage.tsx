@@ -4,7 +4,7 @@ const mockNotifications = [
   { id: 1, type: "crowd", message: "Low crowd detected at Eiffel Tower - Perfect time to visit!", time: "5 min ago", read: false },
   { id: 2, type: "booking", message: "Your Santorini booking is confirmed!", time: "2 hours ago", read: false },
   { id: 3, type: "alert", message: "Weather alert for Swiss Alps tour on Jan 10", time: "1 day ago", read: true },
-  { id: 4, type: "suggestion", message: "AI suggests visiting Louvre Museum - 30% less crowd than usual", time: "2 days ago", read: true }
+  { id: 4, type: "suggestion", message: "She suggests visiting Louvre Museum - 30% less crowd than usual", time: "2 days ago", read: true }
 ];
 // Notifications Page
 const NotificationsPage = () => {

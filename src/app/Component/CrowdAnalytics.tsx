@@ -1,5 +1,3 @@
-"use client"
-import React, { useState, useEffect } from 'react';
 import { TrendingUp, Zap, Users, AlertTriangle, CheckCircle } from "lucide-react";
 
 // Crowd Analytics Page
@@ -94,7 +92,7 @@ const CrowdAnalytics = () => {
       <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
         <div className="flex items-center gap-3 mb-4">
           <Zap className="w-6 h-6 text-teal-400" />
-          <h2 className="text-xl font-semibold text-gray-100">AI Alternative Suggestions</h2>
+          <h2 className="text-xl font-semibold text-gray-100">She Alternative Suggestions</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">

@@ -96,7 +96,7 @@ const TourCard = ({ tour }) => {
         {tour.aiRecommended && (
           <div className="absolute top-3 left-3 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
             <Zap className="w-3 h-3" />
-            AI Recommended
+            She Recommended
           </div>
         )}
         <div className={`absolute top-3 right-3 ${getCrowdColor(tour.crowdLevel)} px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1`}>
@@ -179,7 +179,7 @@ const Dashboard = () => {
         <StatCard icon={Calendar} label="Upcoming Bookings" value="3" change={12} color="bg-teal-500/10 text-teal-400" />
         <StatCard icon={MapPin} label="Destinations Visited" value="12" change={8} color="bg-blue-500/10 text-blue-400" />
         <StatCard icon={DollarSign} label="Total Spent" value="$1,234" change={-5} color="bg-emerald-500/10 text-emerald-400" />
-        <StatCard icon={TrendingUp} label="AI Recommendations" value="8" change={15} color="bg-purple-500/10 text-purple-400" />
+        <StatCard icon={TrendingUp} label="She Recommendations" value="8" change={15} color="bg-purple-500/10 text-purple-400" />
       </div>
 
       <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
@@ -201,7 +201,7 @@ const Dashboard = () => {
 
       <div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-100">AI Recommended Tours</h2>
+          <h2 className="text-xl font-semibold text-gray-100">She Recommended Tours</h2>
           <button className="text-teal-400 hover:text-teal-300 text-sm font-medium">View All</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

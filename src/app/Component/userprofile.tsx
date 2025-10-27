@@ -73,7 +73,7 @@ const UserProfile = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
-                <span className="text-gray-300">AI recommendations</span>
+                <span className="text-gray-300">She recommendations</span>
                 <div className="w-12 h-6 bg-teal-500 rounded-full relative cursor-pointer">
                   <div className="absolute right-0.5 top-0.5 w-5 h-5 bg-white rounded-full" />
                 </div>
